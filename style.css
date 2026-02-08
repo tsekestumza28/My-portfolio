@@ -1,0 +1,282 @@
+body {
+    margin: 0;
+    font-family: poppins, sans-serif;
+    background: #0d1117;
+    color: white;
+    scroll-behavior: smooth;
+  }
+  
+ 
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+  }
+  
+  .navbar ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+  
+  .nav-link {
+    color: white;
+    position: relative;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #58a6ff;
+    transform: scale(1.2);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #58a6ff;
+    transition: 0.3s;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* HOME SECTION */
+  .home-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile-pic {
+    width: 220px; /* bigger size to show half-body */
+    height: 220px; /* keep it square for circular shape */
+    border-radius: 50%; /* makes it circular */
+    border: 4px solid #58a6ff;
+    box-shadow: 0 0 30px rgba(88,166,255,0.5);
+    object-fit: cover; /* ensures photo scales nicely, fills the circle without stretching */
+    object-position: center top; /* moves photo up to show more of the upper body */
+    transition: transform 0.5s, box-shadow 0.5s;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 50px #58a6ff, 0 0 80px #38bdf8;
+  }
+  
+  /* Floating effect animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Typing effect for smooth typing without glitch */
+  .typing {
+    font-size: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 3.5s steps(15) forwards, blink 0.7s infinite;
+  }
+  
+  @keyframes typing {
+    to { width: 15ch; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .home-section p {
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+  
+  .section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .btn.animated-btn {
+    margin-top: 30px;
+    padding: 12px 28px;
+    background: #58a6ff;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.4s;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+  }
+  
+  .btn.animated-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 0 25px #58a6ff;
+  }
+  
+  /* Pulse animation */
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 10px #58a6ff; }
+    50% { box-shadow: 0 0 25px #58a6ff; }
+  }
+  
+  /* ABOUT ME */
+.about-section {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    color: #0f172a; /* dark/navy text for contrast */
+  }
+  
+  .about-section h2 {
+    margin-bottom: 40px;
+  }
+  
+  .about-section p {
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+  
+  /* SKILLS */
+  .skills-section {
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .animated-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    animation: pop 1s ease forwards;
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    padding: 30px 40px;
+    font-size: 1.3rem;
+    background: #161b22;
+    border-radius: 15px;
+    transition: 0.4s;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #58a6ff, 0 0 50px #38bdf8;
+    background: #0f172a;
+  }
+  
+  /* PROJECTS */
+  .projects-section {
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .projects-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .project-card {
+    padding: 30px 40px;
+    font-size: 1.25rem;
+    background: #161b22;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    transition: 0.4s;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #58a6ff;
+  }
+  
+  /* PROJECT TYPING EFFECT */
+  .typing-project {
+    display: inline-block;
+    border-right: 2px solid white;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing-project 3s steps(25) forwards;
+  }
+  
+  @keyframes typing-project {
+    to { width: 200px; }
+  }
+  
+  /* CONTACT SECTION */
+.contact-section {
+    padding: 120px 20px;
+    text-align: center;
+    background-color: #ffffff; /* white background */
+    color: #0f172a; /* dark/navy text */
+  }
+  
+  .contact-section h2 {
+    margin-bottom: 40px;
+  }
+  
+  .contact-section p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+  }
+
+  .section-divider {
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(90deg, #58a6ff, #1f2937);
+    margin: 40px auto;
+    border-radius: 2px;
+  }
+
+  
